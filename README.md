@@ -14,6 +14,8 @@ Node, Bun, Deno, and modern browsers/edge runtimes.
 npm install purequant
 ```
 
+![purequant usage example](assets/example.svg)
+
 ## Why
 
 - **Zero runtime dependencies.** Small bundle, `sideEffects: false`, tree-shakeable.
