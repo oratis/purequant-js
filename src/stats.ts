@@ -56,6 +56,29 @@ export function quantile(x: Vector, q: number): number {
   return s[lo] + (s[hi] - s[lo]) * (pos - lo);
 }
 
+/** Average ranks scaled to [0, 1] (ties share the mean rank). For Rank-IC. */
+export function rank(x: Vector): Vector {
+  const n = x.length;
+  const order = [...Array(n).keys()].sort((a, b) => x[a] - x[b]);
+  const ranks = new Array(n).fill(0);
+  let i = 0;
+  while (i < n) {
+    let j = i;
+    while (j + 1 < n && x[order[j + 1]] === x[order[i]]) j++;
+    const avg = (i + j) / 2;
+    for (let k = i; k <= j; k++) ranks[order[k]] = avg;
+    i = j + 1;
+  }
+  return n > 1 ? ranks.map((r) => r / (n - 1)) : [0];
+}
+
+/** Clip values to the [lower, upper] quantile range. */
+export function winsorize(x: Vector, lower = 0.01, upper = 0.99): Vector {
+  const lo = quantile(x, lower);
+  const hi = quantile(x, upper);
+  return x.map((v) => Math.min(Math.max(v, lo), hi));
+}
+
 export function covMatrix(series: Matrix, ddof = 1): Matrix {
   const n = series.length;
   const out: Matrix = Array.from({ length: n }, () => new Array(n).fill(0));

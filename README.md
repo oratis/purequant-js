@@ -33,7 +33,11 @@ npm install purequant
 | `bonds` | price ↔ **YTM**, Macaulay & modified **duration**, **convexity**, DV01 |
 | `futures` | cost-of-carry fair value, basis, roll yield, index-futures hedge |
 | `optimize` | **minimum-variance** & **risk-parity** weights |
-| `stats` / `linalg` | cov/corr, OLS, quantiles; Gaussian solve, inverse, PSD ridge |
+| `hedge` | beta / min-variance hedge ratio, **pairs / cointegration** screen, half-life |
+| `factor` | multi-factor scoring, cross-sectional z-scoring, sector neutralise, IC |
+| `attribution` | **factor (regression)** & **Brinson** sector attribution |
+| `backtest` | rebalanced & cross-sectional **momentum** backtests with costs |
+| `stats` / `linalg` | cov/corr, OLS, rank, winsorize, quantiles; Gaussian solve, inverse, PSD ridge |
 
 ## Quick start
 

@@ -1,6 +1,6 @@
 {
   "name": "purequant",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Zero-dependency quantitative-finance toolkit in pure TypeScript: VaR/CVaR, Black-Scholes + Greeks, bond duration, futures carry, risk parity. No numpy, no math libs.",
   "type": "module",
   "main": "./dist/index.js",
@@ -12,7 +12,11 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist", "README.md", "LICENSE"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "sideEffects": false,
   "scripts": {
     "build": "tsc",
@@ -20,9 +24,23 @@
     "prepublishOnly": "npm run build"
   },
   "keywords": [
-    "quant", "quantitative-finance", "finance", "risk", "var", "cvar",
-    "black-scholes", "options", "greeks", "bonds", "duration", "futures",
-    "portfolio", "optimization", "risk-parity", "typescript", "zero-dependency"
+    "quant",
+    "quantitative-finance",
+    "finance",
+    "risk",
+    "var",
+    "cvar",
+    "black-scholes",
+    "options",
+    "greeks",
+    "bonds",
+    "duration",
+    "futures",
+    "portfolio",
+    "optimization",
+    "risk-parity",
+    "typescript",
+    "zero-dependency"
   ],
   "author": "oratis",
   "license": "CC-BY-NC-4.0",
@@ -31,8 +49,12 @@
     "url": "git+https://github.com/oratis/purequant-js.git"
   },
   "homepage": "https://github.com/oratis/purequant-js#readme",
-  "bugs": { "url": "https://github.com/oratis/purequant-js/issues" },
-  "engines": { "node": ">=18" },
+  "bugs": {
+    "url": "https://github.com/oratis/purequant-js/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  },
   "devDependencies": {
     "@types/node": "^22.0.0",
     "tsx": "^4.19.0",
